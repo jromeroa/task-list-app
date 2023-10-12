@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
 import { TaskFormComponent } from './task-form.component';
 
 describe('TaskFormComponent', () => {
@@ -8,7 +8,8 @@ describe('TaskFormComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TaskFormComponent]
+      declarations: [TaskFormComponent],
+      imports: [FormsModule],
     });
     fixture = TestBed.createComponent(TaskFormComponent);
     component = fixture.componentInstance;

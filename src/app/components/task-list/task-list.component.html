@@ -1,10 +1,15 @@
-<div>
-  <h2>Task List</h2>
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let task of tasks; let i = index">
-      {{ task.title }}
-      <button (click)="deleteTask(i)" class="btn btn-danger">Delete</button>
-      <button (click)="markTaskAsCompleted(i)" class="btn btn-primary">Mark as Completed</button>
+<div class="container">
+  <h2 class="mt-4">Task List</h2>
+  <ul class="list-group mt-3">
+    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let task of tasks; let i = index">
+      <div>
+        <h5 class="mb-1">{{ task.title }}</h5>
+        <p class="mb-1">{{ task.description }}</p>
+      </div>
+      <div class="btn-group float-right">
+        <button (click)="markTaskAsCompleted(i)" class="btn" [class.btn-success]="task.completed" [class.btn-primary]="!task.completed">Mark Completed</button>
+        <button (click)="deleteTask(i)" class="btn btn-danger">Delete</button>
+      </div>
     </li>
   </ul>
 </div>
